@@ -1,7 +1,9 @@
 # MGBoost
 **Implementation of multiobjective gradient boosted trees**
 
-Directory Structure
+****
+
+**Directory Structure**
 - xgboost/
     - Python package files and subfolders
 - other/
