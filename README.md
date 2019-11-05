@@ -8,7 +8,7 @@
 
 **Directory Structure**
 - xgboost/
-    - Python package files and subfolders
+    - Python package of modified xgboost source code
 - other/
     - test_scripts/
         - Scripts to test performance of MGBoost
