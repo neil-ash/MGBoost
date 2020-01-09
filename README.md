@@ -12,8 +12,8 @@
 - other/
     - test_scripts/
         - xgb/
-                - Scripts to test performance of MGBoost
+            - Scripts to test performance of MGBoost
         - ranking/
-                - Learning-to-Rank experiments for DeltaMART prototype
+            - Learning-to-Rank experiments for DeltaMART prototype
 - notes.txt
 - README.md
