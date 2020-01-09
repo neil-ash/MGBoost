@@ -145,6 +145,91 @@ To do before 11-4 meeting:
     - Share with Mehrdad
 - Make changes to __init__ of MGBoost (from xgboost source code)
 
+------------------------------------------------------------------------------------------------------
+To do 11-17:
+- Write function for creating features from input data
+    - Make function usable with Microsoft bing dataset
+- Test performance of various parameter configs
+- Email function script, jupyter notebook with analysis
+    - Remind Mehrdad to approve thesis in email
+    - Mention questions/ideas regarding feature generation
+    - Ask about meeting this coming week
+- Re-read Chris Burges lambda ranking paper
+- Think about research questions
+    - Why does the inclusion of the A - B feature help?
+    - Adding idea of lambda to xgboost ranking:
+        - By modifying xgboost algorithm -- straightforward? How to?
+        - Without modifying xgboost algorithm -- how?
+
+Microsoft learning-to-rank datasets:
+https://www.microsoft.com/en-us/research/project/mslr/
+
+Concerns:
+- Features will be too big to fit in memory (8GB RAM in laptop)
+- Don't know which column in sample.tsv corresponds to score
+- (?)
+
+------------------------------------------------------------------------------------------------------
+To do 11-19:
+- Write function
+- Do experiments
+- Skim thru Chris Burges paper
+- Think about features/performance
+- Email Mehrdad results
+    - MENTION THESIS APPROVAL
+
+------------------------------------------------------------------------------------------------------
+To do 11-21:
+- Look at unbiased lambdamart code
+- Skim thru Chris Burges paper
+- Think about features/performance
+- Review your summary
+
+------------------------------------------------------------------------------------------------------
+Notes 1-8:
+- Can easily load train/val/test split data from Yahoo LETOR dataset using functions in unbiased
+  lambdamart
+
+  Data explanation: https://github.com/QingyaoAi/Unbiased-Learning-to-Rank-with-Unbiased-Propensity-Estimation
+  Script to load data: https://github.com/QingyaoAi/Unbiased-Learning-to-Rank-with-Unbiased-Propensity-Estimation/blob/master/Unbiased_LTR/data_utils.py
+
+- Generated features are still much too large to fit in memory (100+ GB)
+- Options:
+    - Train/test split with MSFT dataset
+        - Compare delta_features=True vs delta_features=False
+            - Report results
+    - Rewrite feature generation functions for Yahoo data
+        - Make cleaner than MSFT scripts
+    - Fix MGBoost to only load data once
+        - Modify __init__
+    - Email Mehrdad
+        - Mention problem/using cluster
+        - Send paper https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/suml10_submission_20.pdf
+        - Ask to focus on MGBoost wrt KDD
+            - Mention fixing MGBoost
+        - Ask about third project
+    - Review theory
+        - Chris Burges LTR paper
+        - MGBoost problem formulation
+        - Read nature paper
+
+
+------------------------------------------------------------------------------------------------------
+Notes 1-9:
+- First test: delta_features leads to worsened performance
+- Moving forward:
+    - Run more times with different random seeds
+        - At least 5 (?) more times
+    - Modify XGBoost hyperparameters
+        - Maybe current model is too complex
+            - Fewer trees
+            - Shallower max depth
+    - Think of explanation
+        - Curse of dimensionality
+        - Model complexity
+            - Overfitting with more features
+        - Too little data relative to number of features
+    - Try using ONLY delta_features as features
 
 
 
@@ -152,4 +237,13 @@ To do before 11-4 meeting:
 
 
 
--
+
+
+
+
+
+
+
+
+
+.
