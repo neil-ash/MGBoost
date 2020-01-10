@@ -213,13 +213,13 @@ Notes 1-8:
         - MGBoost problem formulation
         - Read nature paper
 
-
 ------------------------------------------------------------------------------------------------------
 Notes 1-9:
 - First test: delta_features leads to worsened performance
 - Moving forward:
     - Run more times with different random seeds
         - At least 5 (?) more times
+        - RESULTS: 3/5 delta_features is worse, 2/5 better (not significant)
     - Modify XGBoost hyperparameters
         - Maybe current model is too complex
             - Fewer trees
@@ -231,7 +231,23 @@ Notes 1-9:
         - Too little data relative to number of features
     - Try using ONLY delta_features as features
 
+------------------------------------------------------------------------------------------------------
+Notes 1-10:
+- Run MSFT experiments on Yahoo dataset
+- Use train/valid sets only (?)
+    - No need to manually train/test split
+    - Don't touch test set yet (?)
+- Still need to randomly sample queries in train/test sets
+    - First figure out how many max queries (memory concern)
 
+LEFT OFF:
+- Yahoo_Data_Processing.ipynb
+- Still need to write build_model() functionality
+- Need to load test data
+    - Should be very similar to train
+    - Make sure to del after loading
+        - del training data when testing (?)
+        
 
 
 
