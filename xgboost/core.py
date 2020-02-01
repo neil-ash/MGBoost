@@ -969,26 +969,26 @@ def create_DMatrices(X_train, y_train_ls):
 # _dtrain_ls = [xgmat, xgmat]
 
 ########################### Linear Regression ##################################
-# import pandas as pd
-#
-# path = '/Users/Ashtekar15/Desktop/Thesis/'
-# data = pd.read_csv(path + 'linear_regression_data.csv')
-#
-# _X = data.X.values.reshape(-1, 1)
-# _y = data.y.values
-#
-# _dtrain_ls = create_DMatrices(_X,
-#                               [_y, _y, _y])
+import pandas as pd
+
+path = '/Users/Ashtekar15/Desktop/Thesis/MGBoost/other/test_data/linear_regression/'
+data = pd.read_csv(path + 'linear_regression_data.csv')
+
+_X = data.X.values.reshape(-1, 1)
+_y = data.y.values
+
+_dtrain_ls = create_DMatrices(_X,
+                              [_y, 10 * _y])
 
 ############################ Multiobjective ####################################
-path = '/Users/Ashtekar15/Desktop/Thesis/multiobj_data/'
-
-_X = np.load(path + 'X_multiobj.npy')
-_y = np.load(path + 'y_multiobj.npy')
-
-_y_ls = [_y[:, 0], _y[:, 1], _y[:, 2], _y[:, 3]]
-
-_dtrain_ls = create_DMatrices(_X, _y_ls)
+# path = '/Users/Ashtekar15/Desktop/Thesis/MGBoost/other/test_data/multiobj_data/'
+#
+# _X = np.load(path + 'X_multiobj.npy')
+# _y = np.load(path + 'y_multiobj.npy')
+#
+# _y_ls = [_y[:, 0], _y[:, 1], _y[:, 2], _y[:, 3]]
+#
+# _dtrain_ls = create_DMatrices(_X, _y_ls)
 ''' END CHANGES '''
 
 
